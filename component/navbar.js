@@ -1,8 +1,6 @@
 function navbar(){
-   
-    let checkLogin = JSON.parse(localStorage.getItem("signinData")) || {}
-  
-   
+    let checkLogin =JSON.parse(localStorage.getItem("signinData")) || {}
+    
 
 
 
