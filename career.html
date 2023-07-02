@@ -501,27 +501,45 @@
 
                 </div> -->
 
+                
+
             </div>
+          
 
             <!-- footer End -->
-
-
-
-
-
-
-            <div id="chatbot">
-                <img id="chat" src="https://cdn.yellowmessenger.com/iuASh5rfzQps1654581153075.png" alt="">
+            <div id="chatbotDiv">
+                <img  src="https://cdn.yellowmessenger.com/iuASh5rfzQps1654581153075.png" alt="">
             </div>
 
-
+            
+            
+            <div class="chatbot" id="chatbot">
+               
+                <div>
+                  <h1>Moster Buddy</h1>
+                  <h2>Need help with your Job Search?</h2>
+               </div>
+                <p id="chatLog">Hi there ! I am Monster Buddy! I am your Job search assistant<br></p>
+                <input id="userBox" type="text" placeholder="type here..............." onkeydown="if (event.keyCode==13) {talk()}">
+                <button id="closeChatbot">Close Chat</button>
+           
+          </div>
+         
+            
         </div>
 
+    </body>
+    
+    </html>
+    
+   
 
 
 
 
-</body>
 
-</html>
+
+
+<script src="./scripts/chatbot.js"></script>
 <script src="./scripts/career.js" type="module"></script>
+

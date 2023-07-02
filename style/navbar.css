@@ -1,0 +1,125 @@
+.main_container{
+    /* border: 1px solid black; */
+  
+    height: 72px;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+
+   }
+
+   a{
+      text-decoration: none;
+     padding-top: 12px;
+   }
+
+ul{
+    list-style-type:none;
+    
+}
+.ulparent{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ulparent>li{
+    padding: 6px;
+    border-radius: 4px;
+}
+.ulparent>li:hover{
+    background-color:rgb(198, 198, 242);
+  
+}
+.ulparent>li>a:hover{
+   
+    color: white;
+}
+.ulparent>li>ul{
+
+
+display: none;
+background-color: rgba(240, 240, 240, 0.9);
+z-index: 1100;
+
+}
+.ulparent>li>a{
+  color:rgb(34, 34, 126); 
+}
+.ulparent>li:hover ul{
+
+
+position: absolute;
+display: block;
+top: 44px;
+
+}
+.ulparent>li>ul>li{
+/* position: relative; */
+cursor:pointer;
+padding: 8px;
+color: rgb(29, 19, 120);
+}
+.ulparent>li>ul>li:hover{
+    background-color: rgba(173, 174, 173, 0.9);
+}
+.ulparent>li>ul>li>.submenu{
+
+display: none;
+
+width: 200px;
+max-width: 230px;
+}
+
+.ulparent>li>ul>li>.submenu>li{
+    padding: 6px;
+}
+.ulparent>li>ul>li>.submenu>li:hover{
+ background-color: grey;
+}
+.ulparent>li>ul>li>.submenu>li>a{
+    padding:6px 6px 6px 0px;
+    color: black;
+    
+    
+}
+
+.ulparent>li>ul>li:hover .submenu{
+
+display: block;
+position: absolute;
+top:0px;
+left:150px;
+z-index: 1200;
+
+}
+.ulparent>li>ul>li>ul{
+    background-color: rgba(227, 231, 232, 0.8);
+}
+
+
+
+.loginhover:hover{
+background-color: rgb(227, 208, 172);
+
+border-radius: 4px;
+
+
+}
+.loginhover>a:hover{
+    color: white;
+}
+#logout_index{
+    color:rgb(34, 34, 126);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+}
+#logout_index:hover{
+   cursor: pointer;
+   color: white;
+}

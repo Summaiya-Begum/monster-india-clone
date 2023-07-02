@@ -1,11 +1,11 @@
 function navbar1(){
     return `  <div id="right_div">
-    <a href="../all/jobs.html"> JOB SEARCH</a>
+    <a href="jobs.html"> JOB SEARCH</a>
     <i class='fa fa-angle-down html_css_arrow' style='color: rgb(0, 0, 0)'></i>
     <div id="drop_down">
-        <li><a href="">Job By Skills</a> </li>
-        <li><a href="">Job By Function</a> </li>
-        <li><a href=""> Job By Industry</a></li>
+        <li><a href="jobs.html">Job By Skills</a> </li>
+        <li><a href="jobs.html">Job By Function</a> </li>
+        <li><a href="jobs.html"> Job By Industry</a></li>
     </div>
 </div>
 <div id="">
@@ -28,6 +28,7 @@ export{navbar1}
 
 
 function navbar2(){
+    let login_career =JSON.parse(localStorage.getItem("signinData")) 
     return `<div id="temp">
 
     <p>34.1</p>
@@ -40,7 +41,7 @@ function navbar2(){
 <!-- 2nd navbar 2nd div -->
 <div id="icon_img">
 
-   <a href="index.html"> <img src="https://media.monsterindia.com/trex/public/default/images/monster-logo.svg" alt=""></a>
+   <a href="./index.html"> <img src="https://media.monsterindia.com/trex/public/default/images/monster-logo.svg" alt=""></a>
 </div>
 
 <!-- 2nd navbar 3rd div -->
@@ -81,10 +82,9 @@ function navbar2(){
     </div>
 
 
-    <div id="login_button">
-        <button>
-            <a href="login.html">Login</a> </button>
-    </div>
+   ${login_career.login?`<button id="career_login">${login_career.email}</button>`:`<div id="login_button">
+   <button><a href="./login.html">Login</a> </button>
+</div>`} 
 
 
 </div>
@@ -118,7 +118,7 @@ function  navbar3(){
 
 
                     <div id="third_sec_child">
-                        <a href="">CAREER MANAGMENT<i class='fa fa-angle-down html_css_arrow'
+                        <a href="javascript:void(0)">CAREER MANAGMENT<i class='fa fa-angle-down html_css_arrow'
                                 style='color: rgb(0, 0, 0)'></i>
                         </a>
                         <div id="container">
@@ -131,7 +131,7 @@ function  navbar3(){
                     </div>
 
                     <div id="third_sec_child">
-                        <a href="">CAREER WOMEN<i class='fa fa-angle-down html_css_arrow'
+                        <a href="javascript:void(0)">CAREER WOMEN<i class='fa fa-angle-down html_css_arrow'
                                 style='color: rgb(0, 0, 0)'></i>
                         </a>
                         <div id="">
@@ -144,7 +144,7 @@ function  navbar3(){
                     </div>
 
                     <div id="third_sec_child">
-                        <a href="">COVID-19 CAREER ADVICE<i class='fa fa-angle-down html_css_arrow'
+                        <a href="javascript:void(0)">COVID-19 CAREER ADVICE<i class='fa fa-angle-down html_css_arrow'
                                 style='color: rgb(0, 0, 0)'></i>
                         </a>
                         <div id="">
@@ -158,7 +158,7 @@ function  navbar3(){
                     </div>
 
                     <div id="third_sec_child">
-                        <a href="">INTERVIEW TIPS<i class='fa fa-angle-down html_css_arrow'
+                        <a href="javascript:void(0)">INTERVIEW TIPS<i class='fa fa-angle-down html_css_arrow'
                                 style='color: rgb(0, 0, 0)'></i>
                         </a>
 
@@ -174,7 +174,7 @@ function  navbar3(){
 
                     <div id="third_sec_child">
 
-                        <a href="">JOB SEARCH STRATEGY<i class='fa fa-angle-down html_css_arrow'
+                        <a href="javascript:void(0)">JOB SEARCH STRATEGY<i class='fa fa-angle-down html_css_arrow'
                                 style='color: rgb(0, 0, 0)'></i>
                         </a>
 
@@ -188,24 +188,24 @@ function  navbar3(){
                     </div>
 
                     <div id="category">
-                        <a href="" id="category">CATEGORIES<i class='fa fa-angle-down html_css_arrow'
+                        <a href="javascript:void(0)" id="category">CATEGORIES<i class='fa fa-angle-down html_css_arrow'
                                 style='color: rgb(0, 0, 0)'></i>
                         </a>
                         <div id="category2">
-                            <li><a href="">Career</a></li>
-                            <li><a href="">Managment</a></li>
-                            <li> <a href="">Career Women</a></li>
-                            <li> <a href="">COVID-19 Career Advice</a></li>
-                            <li> <a href="">Interview Tips</a></li>
-                            <li> <a href="">Job Search Strategy</a></li>
-                            <li><a href="">Motivation & Thought Leadership</a></li>
-                            <li> <a href="">Resume & Cover Letters</a></li>
-                            <li><a href="">Salary Negotiation</a></li>
-                            <li> <a href="">Second Career Options</a></li>
-                            <li> <a href="">Special Ablity</a></li>
-                            <li> <a href="">StartUps</a></li>
-                            <li><a href="">Taxation & Savings</a></li>
-                            <li><a href="">Work Life Balance</a></li>
+                            <li><a href="javascript:void(0)">Career</a></li>
+                            <li><a href="javascript:void(0)">Managment</a></li>
+                            <li> <a href="javascript:void(0)">Career Women</a></li>
+                            <li> <a href="javascript:void(0)">COVID-19 Career Advice</a></li>
+                            <li> <a href="javascript:void(0)">Interview Tips</a></li>
+                            <li> <a href="javascript:void(0)">Job Search Strategy</a></li>
+                            <li><a href="javascript:void(0)">Motivation & Thought Leadership</a></li>
+                            <li> <a href="javascript:void(0)">Resume & Cover Letters</a></li>
+                            <li><a href="javascript:void(0)">Salary Negotiation</a></li>
+                            <li> <a href="javascript:void(0)">Second Career Options</a></li>
+                            <li> <a href="javascript:void(0)">Special Ablity</a></li>
+                            <li> <a href="javascript:void(0)">StartUps</a></li>
+                            <li><a href="javascript:void(0)">Taxation & Savings</a></li>
+                            <li><a href="javascript:void(0)">Work Life Balance</a></li>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,79 @@
+
+        #bigdivlog{
+            display: flex;
+            
+           width: 100%; 
+           
+           box-sizing: border-box;
+        }
+        .login_subParent{
+            margin: auto;
+            padding: 10px 30px 20px 30px;
+           
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        #firstlogin{
+            /* border: 1px solid black; */
+          
+            display: block;
+            float: right;
+            opacity: 0.3;
+        }
+        #firstlogin>a{
+           font-size: 50px;
+           border: none;
+           color: black;
+           padding: 10px;
+           text-decoration: none;
+           border: none;
+           font-family: Arial, Helvetica, sans-serif;
+          
+        }
+       
+            
+             
+       input{
+        width:340px;
+        padding: 15px;
+        border-radius: 4px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+       }
+       #loginbtn{
+        width:375px;
+        padding: 15px;
+        background-color: #002961 ;
+        color: white;
+        font-size: large;
+        border: none;
+        border-radius: 3px;
+        margin-top: 0px;
+        text-align: center;
+
+       }
+       #loginbtn:hover{
+        background-color: rgb(61, 61, 116);
+        cursor: pointer;
+       }
+       form+h3{
+        color: lightpink;
+       }
+       #span{
+        color: rgb(111, 0, 255);
+       }
+       #new,#googlefb{
+        text-align: center;
+        border: 1px solid rgb(230, 224, 224);
+        width: 373px;
+        margin-top: 20px;
+        border-radius: 4px;
+       
+       }
+
+      button{
+        border: none;
+        border-radius: 8px;
+      }
+       
+     

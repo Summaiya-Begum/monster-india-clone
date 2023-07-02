@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    position: relative;
+}
 
 #big_container
 {
@@ -243,11 +246,7 @@ background-color: aquamarine;
     
 }
 
-#third_navbar a .fa
-{
-/* padding: 0 10px; */
 
-}
 #third_navbar a
 {
     text-decoration: none;
@@ -773,9 +772,7 @@ background-color: rgb(255, 255, 255);
   
   display: grid;
 }
-#smalldiv{
-    /* border: 1px solid red; */
-}
+
 
 #btnimg{
   width: 300px;
@@ -874,13 +871,98 @@ background-color: rgb(255, 255, 255);
 
 }
 #chatbot{
-    position: sticky;
-    bottom: 0;
+    display: inline-block;
+    width: 30%;
+    position: fixed;
+    transform-origin: 0% 0%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+    overflow: hidden;
+
 }
-#chat{
-    width: 8%;
-    height: 100px;
-    margin-top: 30px;
+   
+   /* chatbox  */
+   #chatbotDiv{
+    display: flex;
+   justify-content: flex-start;
+   position:fixed;
+   width: 100px;
+   height: 100px;
+  bottom: 0;
+  
+   
+}
+#chatbox>img{
+    width: 100%;
+    height: 100%;
+}
+
+.chatbot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    /* border: 1px solid red; */
+    width: 300px;
+    height: 300px;
+    overflow-x: hidden;
+    line-height: 20px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    position:absolute;
+    padding: 20px;
+    background-color: white;
+    visibility: hidden;
+    transition: transform 0.4s,top 0.4s;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.chatbot>div{
+    background-color: rgb(93,77,168);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding:20px;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+}
+#closeChatbot{
+    height: 40px;
+    background-color: rgb(93,77,168);
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 6px;
+}
+#closeChatbot:hover{
+  background-color: #4c4084;
+  cursor: pointer;
+}
+#userBox{
+    width: 80%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 0.3px solid grey;
+}
+.open-popup{
+    
+    visibility: visible;
+    top:60%;
+    transform: translate(-50%,-50%) scale(1);
+
+}
+
+/* login btn or showing email if login */
+#career_login{
+    border: none;
+    padding: 6px;
 }
 
 

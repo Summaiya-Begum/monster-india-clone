@@ -1,0 +1,125 @@
+
+.register_subparent{
+  margin:auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 40%;
+  position: relative;
+  padding: 0px 20px 0px 20px;
+}
+.register_subparent>div:last-child{
+  width: 100%;
+  margin: auto;
+  
+
+}
+.register_subparent>div:last-child>form{
+  margin: auto;
+
+}
+form{
+margin: auto;
+/* display: flex; */
+/* justify-content: center; */
+/* align-items: center; */
+/* flex-direction: column; */
+padding: 20px;
+}
+input{
+  box-sizing: border-box;
+  
+    margin-top: 5px;box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin-bottom: 5px;
+    padding: 15px;
+    border-radius: 4px;
+    width: 100%;
+    overflow: hidden;
+    border: none;
+   margin-bottom: 20px;
+  
+}
+form>p, label{
+  text-align: left;
+}
+ #register_btn{
+    padding: 15px;
+    background-color: green;
+    border: none;
+    color: white;
+    font-size: larger;
+    border-radius: 6px;
+    display: block;
+    margin-left: auto;
+ }
+ #register_btn:hover{
+  background-color: rgb(29, 172, 29);
+  cursor: pointer;
+ }
+ 
+  #ac{
+    text-align: center;
+  }
+  #ac+p{
+    text-align: center;
+  }
+
+  #firsthalf{
+   
+    opacity: 0.1;
+  }
+  #secondhalf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+ #fbgoogle>button{
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+ }
+ #fbgoogle>button:first-child{
+  color: rgb(53, 50, 214);
+  background-color: transparent;
+  opacity: 0.5;
+  border: 0.2px solid rgb(63, 60, 60);
+  cursor: pointer;
+ }
+ #fbgoogle>button:last-child{
+  color: rgba(65, 23, 217, 0.7);
+  opacity: 0.5;
+  background-color: transparent;
+  border: 0.2px solid rgb(63, 60, 60);
+  cursor: pointer;
+  
+ }
+  #firstlogin{
+    /* border: 1px solid black; */
+  
+    display: block;
+    float: right;
+    opacity: 0.3;
+    position: absolute;
+    right: 10px;
+}
+#firstlogin>a{
+   font-size: 50px;
+   border: none;
+   color: black;
+   padding: 10px;
+   text-decoration: none;
+   border: none;
+   font-family: Arial, Helvetica, sans-serif;
+  
+}
+ 
+  #firsthalf>a>img{
+height: 50px;
+width: 50px;
+margin-left: 95.5%;
+}
+.privacy_policy_register{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.privacy_policy_register>li{
+   padding: 10px;
+}

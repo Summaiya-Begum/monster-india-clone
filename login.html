@@ -5,43 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style/login.css">
 
 </head>
 <body>
    
         <div id="bigdivlog">
-            <div id="firstlogin"><a href="navbar.html" ><img src="data:image/png;base64,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"/></a></div>
-              <div id="scndlogin">
-                <h1>Welcome!</h1>
-                <p>Log in using your Monster credentials</p>
-                <form action="">
-                   
-                    <input id="email" type="email" placeholder="Email Address" required/>
-
-                    <br>
-                    <br>
-                   
-                    <input id="password" type="password" placeholder="Enter password" required><br>
-                    <br>
-                    <p><a href="">Forgot Password?</a></p><br>
-                    <button id="loginbtn">Login</button>
+            <div class="login_subParent">
+                <div id="firstlogin"><a href="index.html" ><span>x</span></a></div>
+                   <div id="scndlogin">
+                    <h1>Welcome!</h1>
+                    <p>Log in using your Monster credentials</p>
+                    <form action="">
+                       
+                        <input id="email" type="email" placeholder="Email Address" required/>
+    
+                        <br>
+                        <br>
+                       
+                        <input id="password" type="password" placeholder="Enter password" required><br>
+                        <br>
+                        <p style="margin-top: 0px;padding-top: 0px;"><a href="">Forgot Password?</a></p><br>
+                        <button id="loginbtn">Login</button>
+                    
+                    
+    
+                    </form>
+                    <h3 style="text-align: center;">Or<span id="span">Login via OTP</span></h3>
+                    <div id="new">
+                        <h3>New to Monster?</h3>
+                        <p>Create your profile now and be visible to the top recruiters in the world</p>
+                        <a href="register.html"><button id="loginbtn">Register with us</button></a>
+                    </div>
+                    <div id="googlefb">
+                        <p>Your dream job is a click away! Get the app on your mobile.</p>
+                        <button><img src="https://www.monsterindia.com/rio/public/images/android-footer.png" alt="footer"></button><button><img src="https://www.monsterindia.com/rio/public/images/ios-footer.png"></button>
+                    </div>
+                 </div> 
+            </div>
                 
-                
-
-                </form>
-                <h3>Or<span id="span">Login via OTP</span></h3>
-                <div id="new">
-                    <h3>New to Monster?</h3>
-                    <p>Create your profile now and be visible to the top recruiters in the world</p>
-                    <a href="register.html"><button id="loginbtn">Register with us</button></a>
-                </div>
-                <div id="googlefb">
-                    <p>Your dream job is a click away! Get the app on your mobile.</p>
-                    <button><img src="https://www.monsterindia.com/rio/public/images/android-footer.png"></button><button><img src="https://www.monsterindia.com/rio/public/images/ios-footer.png"></button>
-                </div>
-             </div> 
          </div>
 </body>
 </html>
@@ -49,20 +52,23 @@
 
 <script>
    let form=document.querySelector("form");
-   let userData=JSON.parse(localStorage.getItem("userData")) || [];
-
+   let userData=JSON.parse(localStorage.getItem("userData")) || []
+//    let monster_login = JSON.parse(localStorage.getItem('monsterLogin'))
 
  form.addEventListener("submit", function(event){
     event.preventDefault();
     let data={
         email:form.email.value,
         password:form.password.value,
+        login:false
     };
     if (checkSignin(data.email,data.password)===true){
-        localStorage.setItem("signinData",JSON.stringify(userData));
+        
+        localStorage.setItem("signinData",JSON.stringify({...data, login:true}));
         alert("Sign In Successful");
-        window.location.href="home.html";
-
+        window.location.href="index.html";
+       
+    
 
     }
     else{

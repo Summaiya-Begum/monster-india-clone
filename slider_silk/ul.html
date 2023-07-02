@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <style>
+       #homeFindJobUl>li{
+        color:red;
+       
+       }
+       #homeFindJobUl>li::before{
+        background-color:orange;
+       }
+       #homeFindJobUl>li:hover:before{
+        color:green;
+       }
+       p{
+        text-decoration: none;
+       }
+      /* #homeFindJobUl>li::before{
+  content: "";
+  position: absolute;
+  background-color: whitesmoke;
+  height: 2px;
+ 
+  width: 0%;
+ 
+  left:50%;
+   bottom: -10px; 
+ transition: width .5s, ease-in-out   transform ;
+   transform: translate(-50%, -50%);
+   
+} */
+/* #homeFindJobUl>li:hover:before{
+  width: 100%;
+} */
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul id="homeFindJobUl">
+        <li>Skills</li>
+        <li>Location</li>
+        <li>Industry</li>
+        <li>Functions</li>
+        <li>Roles</li>
+        <li>Company</li>
+      </ul>
+      <div id="homeAppendLiInDiv"></div>
+    </div>
+    <p id="demo" style=color:green>This is an example paragraph.</p>
+
+<button  type="button" onclick="myFunction()">Decorate text</button>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").style.textDecoration = "null";
+}
+  </body>
+</html>
+<script>
+  let appendLiIn = (event) => {
+    // console.log(event.target, event.CurrentTarget);
+    let i="Skills"
+     i = event.target.innerText;
+    console.log(i);
+   
+    // console.log(findJobData[i])
+    appendLiInDiv.innerHTML=null;
+        relodAppend(i)
+    
+  };
+  var creatliItems = (text) => {
+      let li = document.createElement("li");
+      li.innerText = text;
+      return li;
+    };
+  let relodAppend =(key)=>{
+        findJobData[key].forEach((element) => {
+        
+       appendLiInDiv.append(creatliItems(element));
+      (console.log(creatliItems(element)))
+    });
+   
+}
+  let findJobData=
+                {
+                    Company:["Reliance Jio Infocomm Limited"," Amazon" ,"Accenture", "D Source", "Tata Group","ANI Calls India Private Limited","Standard Chartered", 
+                        "Varite India Private Limited"," Genpact"," Muthoot finance", "Agreeya Solutions"," India Private Limited ", "Corporate Resources ", "Citi ",
+                        "Kotak Mahindra Bank Limited ","CIEL HR Services ","Lavya Associates "," Tata Mutual Fund "," Airtel "," IBM "],
+                    
+                    Skills:["Sales","  Java "," Jio Customer Associate - Freelancer JP","  Resident Jio Associate - Freelancer JP","Sql","Operations ","Javascript ",
+                         "Python ","Software Eng","Customer Support ","Customer Service ","Good Communication ","HTML ","Marketing ","CSS ","C# ","Lead Generation ",
+                         "Voice Process ","Problem Solver ","Bpo " ],
+
+                    Location:["Bengaluru / Bangalore ","Hyderabad / Secunderabad, Telangana ","Mumbai ","Chennai ","Pune ","Gurgaon / Gurugram ","Noida ","Delhi ",
+                         "Nashik ","Ahmedabad ","Kolkata ","Mumbai City ","Hyderabad, Uttar Pradesh ","Thane ","Navi Mumbai ","Jaipur","Coimbatore ","Remote ",
+                         "Cochin / Kochi / Ernakulam ","Vadodara "],
+                         
+                    Industry:["IT/Computers - Software ","Banking/Accounting/Financial Services ","Telecom ","IT/Computers - Hardware & Networking ",
+                          "Internet/E-commerce ","Recruitment/Staffing/RPO ","ITES/BPO ","Hospitals/Healthcare/Diagnostics ","Automotive/Automobile/Ancillaries ",
+                          "Electronics Manufacturing ","Education ","Semiconductor ","Insurance","Hotels/Hospitality/Restaurant ","Retailing ","Pharmaceutical ",
+                          "Construction & Engineering ","Engineering & Design ","Oil/Gas/Petroleum ","Real Estate "],
+
+                    Functions:["IT  ","Sales/Business Development ","Customer Service/Call Centre/BPO ","IT/Software Development - Systems/EDP/MIS ",
+                         "Finance & Accounts ","Manufacturing/Engineering/R&D ","IT/Software Development - System Programming/Middleware ","Banking ",
+                         "IT- Hardware/Telecom/Technical Staff/Support ","Advertising, DM, PR, MR & Event Management ","Operations ","Human Resources ",
+                         "IT/Software Development - Application Programming/Maintenance ","Engineering - Mechanical/Automotive/Industrial ",
+                         "Pharmaceutical/Biotechnology ","IT/Software Development - DBA/Datawarehousing ","Engineering - Environmental/Health/Safety ",
+                         "Health Care ","Marketing & Communications ","IT/Software Development - Mainframe "],
+
+                     Roles:["Software Engineer ","Customer Service Executive (Voice) ","Team Leader ","Business Development Manager ","Sales Exec ",
+                         "Doctor ","Software Developer ","Fresher ","HR Executive ","Business Analyst ","Software Test Engineer ","Accountant ",
+                         "Customer Service Executive (Non-voice) ","Application Engineer ","Project Leader ","IT Application Designer Specialist ",
+                        "Area ","Mechanical Engineer ","Clinical Research Associate ","Solution Architec"],
+   
+                };
+  //findJobData.Skills.forEach((element) => {(console.log(element))});
+
+  let findJob = document.querySelector("#homeFindJobUl");
+  findJob.addEventListener("click", appendLiIn, false);
+  let appendLiInDiv = document.querySelector("#homeAppendLiInDiv");
+  relodAppend("Skills")
+</script>

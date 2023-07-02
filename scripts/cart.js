@@ -1,6 +1,6 @@
-import navbar from "./component/navbar.js";
+import navbar from "../component/navbar.js";
  document.querySelector(".main_container").innerHTML=navbar();
- import footer from "./component/footer.js";
+ import footer from "../component/footer.js";
 document.querySelector("#footer746").innerHTML=footer();
 
 
@@ -31,10 +31,40 @@ document.querySelector("#applybtn").addEventListener("click",()=>{
 
     }
 })
+function placeOrder(){
+  alert('Your Order has been Placed')
+}
+let check_login =JSON.parse(localStorage.getItem("signinData")) 
 
 var checkBox = document.getElementById("checkbox");
 document.querySelector("#checkbox").addEventListener("click",()=>{
+      
+    let checkboxbtn =  document.getElementById('checkboxbtn')
     if (checkBox.checked===true){
         document.getElementById("checkboxbtn").style.backgroundColor="blue";
+        if(check_login.login){
+            checkboxbtn.innerHTML  = null;
+            let place_order = document.createElement('button')
+            place_order.innerText = "PLACE ORDER"
+            place_order.id = "order_place"
+            checkboxbtn.append(place_order)
+            checkboxbtn.style.padding = '0px'
+            document.getElementById("checkboxbtn").style.backgroundColor="blue";
+        }
+    }else if(!checkBox.checked){
+        document.getElementById("checkboxbtn").style.backgroundColor="rgb(205,205,205)";
+      
     }
-})
+})  
+
+if(check_login.login){
+    let checkboxbtn = document.getElementById("checkboxbtn");
+    checkboxbtn.addEventListener('click', ()=>{
+        placeOrder()
+        window.location.href="index.html"
+    })
+    
+}
+
+import Logout from "./logout.js";
+Logout()

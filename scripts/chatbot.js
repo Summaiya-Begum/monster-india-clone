@@ -1,3 +1,23 @@
+let popup2=document.getElementById("chatbot");
+document.querySelector("#chatbotDiv").addEventListener("click",()=>{
+    console.log("inside");
+    popup2.classList.add("open-popup")
+})
+    
+
+
+
+document.querySelector("#closeChatbot").addEventListener("click",()=>{
+    
+    
+    console.log("inside");
+    popup2.classList.remove("open-popup")
+
+})
+    
+
+
+
 know={
     "Hello":" &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Hi there! Are you looking for a Job change?",
     "Who are you?":"&nbsp&nbsp&nbsp&nbsp&nbsp&nbspI am Robot",

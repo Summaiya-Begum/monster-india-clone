@@ -1,6 +1,9 @@
 import {collectData, job_near_banglore, a_tred_banglore} from "./job_data_page.js";
-// import navbar from "./component/navbar.js";
-//  document.querySelector('.main_container').innerHTML=navbar();
+import navbar from "../component/navbar.js";
+ document.querySelector('.main_container').innerHTML=navbar();
+import footer from '../component/footer.js'
+document.getElementById('footer').innerHTML=footer()
+
 var coll = document.getElementsByClassName("open_close");
 var i;
 let icon = document.getElementsByClassName("icon_fa")
@@ -53,7 +56,7 @@ function appendActualJobCard(database){
         exper.innerHTML=`<i class="fa fa-suitcase"></i>${el.experience}`
         exper.setAttribute('class', "basic_info")
         let specified = document.createElement('p') 
-        specified.innerHTML=`<img class ="i" src="in_scripts/icon_coin.png" alt="coin_icon"></i>${el.specified}`
+        specified.innerHTML=`<img class ="i" src="./Images/icon_coin.png" alt="coin_icon"></i>${el.specified}`
         specified.setAttribute('class', "basic_info")
         let basic_inf = document.createElement('div')
         basic_inf.append(city_name, exper, specified)
@@ -76,7 +79,7 @@ function appendActualJobCard(database){
         let div_img = document.createElement('div') 
         div_img.setAttribute('class', 'parent_social_div')
         let link_icon = document.createElement('img')
-        link_icon.src="in_scripts/branch_img.svg"
+        link_icon.src="./Images/branch_img.svg"
         link_icon.setAttribute("class", "social_media")
         let div3 = document.createElement('div')
       
@@ -96,7 +99,13 @@ function appendActualJobCard(database){
         btn.innerText="Apply"
         btn.setAttribute("class", 'apply_for_job') ;
         btn.addEventListener("click",()=>{
-          window.location.href="../login.html";
+          let applyjob = JSON.parse(localStorage.getItem("signinData")) 
+          if(applyjob.login){
+            alert('Your Application is submitted')
+          }else{
+            window.location.href="login.html";
+          }
+
         })
         access_share.append(post_update, star, div_img, btn)  
         job_main_div.append(jobtitle, com_name, basic_inf, des, skills, access_share)
@@ -152,7 +161,12 @@ for(let i=0;i<input.length;i++){
         }
          
       })
-      appendActualJobCard(ct)
+      if(ct.length>0){
+        appendActualJobCard(ct)
+      }else{
+        alert('Cites and Experience are currently Allowed (cities:delhi, banglore, gurugram, exp:0-1, 5-7, 7-10)')
+      }
+    
       console.log(ct)
       
     }
@@ -162,52 +176,118 @@ for(let i=0;i<input.length;i++){
 locationBasedSearch()
 function locationBasedSearch(){
 let loc_input = document.querySelector('#location_srch') 
-loc_input.addEventListener('input', function(){
- 
-    let location_s = collectData.filter((el)=>{
-      if(el.city==loc_input.value){
-        return el
-      }
+let srch_button = document.querySelector('#srch_button') 
+srch_button.addEventListener('click', ()=>{
+  let exp_error_message = document.getElementById('exp_main_div')
+  exp_error_message.innerText = null
+  let lower = loc_input.value.toLowerCase()
+  console.log(lower)
+  let location_s = collectData.filter((el)=>{
+        const city = el.city.split("/")
        
+        if(city.length>1){
+          if(city[0].toLowerCase()==lower){
+            // console.log("hello split 1")
+            return el  
+          }else if(city[1].toLowerCase()==lower){
+            // console.log("hello split 2")
+            return el
+          }
+        }else{
+          if(el.city.toLowerCase()==lower){
+              //  console.log("hello split 3")
+            return el
+          }
+        }
+       
+         
+        })
+           
+           
+        if(location_s.length>0){
+          appendActualJobCard(location_s)
+        }else{
+          alert('Loaction not Found or Try delhi or banglore')
+        }
+        
+        console.log(location_s)
+        
+      
     })
-    appendActualJobCard(location_s)
-    console.log(location_s)
+
+}
+
+// loc_input.addEventListener('change', function(e){
+//       e.preventDefault()
+//     let location_s = collectData.filter((el)=>{
+//       let lower = loc_input.value.toLowerCase()
+//       if(el.city==loc_input.value){
+//         return el
+//       }
+       
+//     })
+//     if(location_s.length>0){
+//       appendActualJobCard(location_s)
+//     }else{
+//       alert('Loaction not Found or Try Delhi(case Sensative)')
+//     }
+    
+//     console.log(location_s)
     
   
-})
-loc_input.value=null
-}
+// })
+// loc_input.value=null
+// }
 // experience based search
 experienceBasedSearch()
 function experienceBasedSearch(){
   let exp_search = document.querySelector('#exp_srch')
+  let exp_error_message = document.getElementById('exp_main_div')
   exp_search.addEventListener('input', ()=>{
+    
+    exp_error_message.innerText = null
+    
   let exp_len = collectData.filter((el)=>{
       
         if(Number(el.experience[0])){
           let num = +el.experience[0]
           let exp_y = +exp_search.value
-          if(num==exp_y) return el
-          // console.log(num)  
-          
-          // console.log(exp_search.value)  
+          if(num==exp_y){
+            return el
+          }
         }
      })
-      console.log(exp_len)
-      appendActualJobCard(exp_len)
-  })
-  
-}
+     if(exp_len.length>0){
+       appendActualJobCard(exp_len)
+      }else{
+        console.log(exp_len)
+        exp_error_message.innerText = "Experience not Found"
+        exp_error_message.style.color = 'red'
+      }
+    })
+  }
+         
+ 
+   
+        
+       
 
 let searchJob = ()=>{
   // console.log( search_job.value);
   let r_search = collectData.filter((el)=>{
-    if(el.jobrequirment==search_job.value){
+      let element = el.jobrequirment.toLowerCase()
+      let search_input = search_job.value.toLowerCase()
+    if(element==search_input){
       return el
     }
      
   })
-    console.log(r_search);
+  if(r_search.length>0){
+    appendActualJobCard(r_search)
+  }else{
+    alert('Job Description not Found try EX.."java developer" ')
+  }
+  
 }
 
 let search_job = document.querySelector('#job_scrh')
@@ -217,66 +297,83 @@ let search_job = document.querySelector('#job_scrh')
       searchJob()
     }
  })
-//  function gothroughStrings(){
-//   let count = 0
-//   let bag = ""
-//   let putinpair = {}
-//   for(let i=0;i<collectData.length;i++){
-//     let char = collectData[i]
 
-//      for(let j=0;j<char.jobrequirment.length;j++){
-//       // console.log(char.jobdescription[j]); 
-//       let ch = char.jobrequirment[j]
-//       if(ch[i]){
-//          if(ch[i]!==" " || ch[i]!==","){
-           
-//           bag+=ch[i]
-//          }else{
-           
-//          }
-//       }  
-//      }
-    
-//     // if(char[i]){
-//     //   console.log(char[i]);
-//     // }
-//   }
-//   bag = bag.split(" ")
-//   console.log(bag)
-// }
 
 // gothroughStrings()
-
 const element = document.querySelector('#upload_child_div')
-element.addEventListener('click', ()=>{
-})
+
 
 let arr = []
-element.addEventListener('dragover', (e)=>{
-   e.preventDefault()
-})
-element.addEventListener('drop', e =>{
- e.preventDefault()
- 
- let preview = e.dataTransfer.files[0]
- if(preview.type.startsWith("image/")){ 
-  const reader = new FileReader()
-  arr.push(reader)
-  localStorage.setItem("uploaded_documents",JSON.stringify(arr))
-  reader.readAsDataURL(preview)
-  reader.onload = () =>{
-   let images = document.createElement('img')
-   images.src = URL.createObjectURL(preview) 
-   
-   images.setAttribute('class', 'uploadPreview')
-    element.style.backgroundImage = `url('${reader[0].result}')`
-  //  let empty_this_box = document.querySelector('#upload_child_div')
-  //  empty_this_box.innerHTML=null
-    // element.append(images)
-  }
 
+
+let preview_upload = false
+const file = document.getElementById('input_file')
+ function checkFileType(){
+  const file = document.getElementById('input_file')
+  
+  var allowedExtensions =/(\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt)$/i; 
+  
+  if (!allowedExtensions.exec(file.value)) {
+    alert('Invalid file type');
+    // file.value = '';
+    return false
+  }else{
+    return true
+  } 
+   
  }
+  
+file.addEventListener('change', ()=>{
+  // const element = document.querySelector('#upload_child_div')
+  let beforeExe = checkFileType()
+  console.log(beforeExe)
+ if(beforeExe===true){
+  console.log('Hello')
+    let fr = new FileReader()
+    fr.readAsText(file.files[0])
+    fr.addEventListener("load", ()=>{
+       const text_files =  fr.result
+       let docs = document.createElement('p')
+       if(text_files){
+        docs.innerText = text_files
+        
+      }
+      element.innerHTML = null
+      element.append(docs)  
+    })
+ }else{
+  const fr  =  new FileReader()
+  fr.readAsDataURL(file.files[0]);
+  fr.addEventListener("load", ()=>{
+    const url = fr.result
+    let img = new Image()
+    img.style.height = '200px'
+    img.style.width = '200px'
+    
+    img.src = url;
+    if(url){
+      preview_upload = true
+    }
+    element.innerHTML=null
+    element.append(img)
+  })
+ }
+
 })
+
+const photo_submit = document.getElementById('photo_submit')
+photo_submit.addEventListener('click', ()=>{
+  if(preview_upload){
+    let close_upload =  document.getElementById("upload_resume_main"); 
+    close_upload.style.display = "none";
+    alert("File submitted successfully")
+  }
+})
+
+
+
+//this section contain upload file modal logic for open and close
+// query selector is used to catch two different div with same id which opens upload modal
 
 let upload_div = document.querySelectorAll('#target_upload_page')
 // upload_div.style.display="none"
@@ -287,71 +384,34 @@ for(let i=0;i<upload_div.length;i++){
 
 function displayDocUploadPopUp(e){
   e.preventDefault()
-  let up_div = document.querySelector('#upload_resume_main')
-  up_div.style.display="block"
+  let before_upload = JSON.parse(localStorage.getItem("signinData")) 
+  if(before_upload.login){
+    let up_div = document.querySelector('#upload_resume_main')
+    up_div.style.display="block"
+  }else{
+    window.location.href = "login.html"
+  }
+  
 }
 
-var modal = document.getElementById("upload_resume_main"); 
+var modal = document.getElementById("close_upload"); 
 modal.addEventListener('click', ()=>{
-    
-  modal.style.display = "none";
+  
+    let close_upload =  document.getElementById("upload_resume_main"); 
+    close_upload.style.display = "none";
+  let file_type = document.querySelector('#upload_child_div>p')
+  // file_type.style.color = 'blue'
+  // file_type.innerText  = null
+ 
+   
 })
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-
-}
-
-
-// let getdocsfromsubmit = ()=>{
-
+// function target_upload_page_func(){
+//   console.log("yes this is target")
 // }
-// let docs_upload_btn = document.getElementById('photo_submit')
-// docs_upload_btn.addEventListener('click', ()=>{
-//    console.log(docs_upload_btn.value)
-// })
 
-
-
-// document.querySelector("#input_file").addEventListener("change", function(e){
-// 	var canvasElement = document.querySelector("canvas")
-// 	var file = e.target.files[0]
-// 	if(file.type != "application/pdf"){
-// 		console.error(file.name, "is not a pdf file.")
-// 		return
-// 	}
-	
-// 	var fileReader = new FileReader();  
-
-// 	fileReader.onload = function() {
-// 		var typedarray = new Uint8Array(this.result);
-
-// 		PDFJS.getDocument(typedarray).then(function(pdf) {
-// 			// you can now use *pdf* here
-// 			console.log("the pdf has ",pdf.numPages, "page(s).")
-// 			pdf.getPage(pdf.numPages).then(function(page) {
-// 				// you can now use *page* here
-// 				var viewport = page.getViewport(2.0);
-// 				var canvas = document.querySelector("canvas")
-// 				canvas.height = viewport.height;
-// 				canvas.width = viewport.width;
-
-
-// 				page.render({
-// 					canvasContext: canvas.getContext('2d'),
-// 					viewport: viewport
-// 				});
-// 			});
-
-// 		});
-// 	};
-
-// 	fileReader.readAsArrayBuffer(file);
-// })
 
 // data appending for couple of divs
+
 let append_latest = document.querySelector('#append_trending_both')
 let locationBanglore = document.querySelector('#near_banglore1')
 let value_both;
@@ -399,7 +459,7 @@ function appe_job(appn, la_job_arr, value_both){
   appendActualJobCard(newarr)   
     console.log(newarr)
   }
- /////// 
+ 
  let dataForDetails =[]
  function gettingAllDetails(el){
   // console.log(el)
@@ -407,6 +467,13 @@ function appe_job(appn, la_job_arr, value_both){
   localStorage.setItem("job_details", JSON.stringify(el))
   // dataForDetails.push(el)
   }
+
+
+//check if login or not
+import Logout from "./logout.js";
+Logout()
+
+
 
 
   

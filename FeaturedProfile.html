@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./FeatureProfile.css">
-    <link rel="stylesheet" href="./navbar.css">
-    <link rel="stylesheet" href="./footer.css">
+    <title>Feature Profile</title>
+    <link rel="stylesheet" href="./style/FeatureProfile.css">
+    <link rel="stylesheet" href="./style/navbar.css">
+    <link rel="stylesheet" href="./style/main_footer.css">
 </head>
 <body>
     <div class="main_container"></div>
@@ -15,7 +15,7 @@
         <div class="header">
             <h2><a href="index.html">Home</a></h2>
             <h2>></h2>
-            <h2><a href="./PremiumServices.html">Premium Services</a></h2>
+            <h2><a href="PremiumServices.html">Premium Services</a></h2>
             <h2>></h2>
             <h2>Featured Profile</h2>
         </div>
@@ -181,8 +181,8 @@
                         <input id="email" type="text" placeholder="Enter your email-id" />
                         <label>Mobile Number</label>
                         <div id="select">
-                          <select name="" id="">
-                            <option value="">+91</option>
+                          <select name="" id="precode">
+                            <option value="91">+91</option>
                             <option value="">+93</option>
                             <option value="">+355</option>
                             <option value="">+213</option>
@@ -191,10 +191,10 @@
                             <option value="">+376</option>
                             <option value="">+244</option>
                             <option value="">+1264</option>
-                          </select>
-                          <input type="text" placeholder="Enter your phone number" />
+                          </select> 
+                          <input type="tel" id="phone" placeholder="Enter your phone number" />
                         </div>
-                        <button id="callMeBack"><a href="">CALL ME BACK</a></button>
+                        <button id="call_me_back">CALL ME BACK</button>
                       </div>
                     </div>
                   </div>
@@ -359,7 +359,7 @@
                     </div>
                 </div>
             </div>
-            <div class="BuyService"><button><a href="./cart.html">Buy Now</a></button></div>
+            <div class="BuyService"><button><a href="cart.html">Buy Now</a></button></div>
 
         </div>   
           
@@ -396,12 +396,13 @@
         </div>
         <div id="logoSection">
             <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt=""></div>
-            <div class="logo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAC0CAMAAAB4+cOfAAAAb1BMVEX39/cnl8////8Tks0Aj8vP5fOey+ZMpNX++/nI4fD7+fgEkMzt9vsalM1+vN/m8vmkzeVZq9fe6/IvnNHx9faXxuK/2uvY6PCGv9+Pw+Ho8PRpsdrw+PxTqNZBodPh7PKw0udxtdvB3/C42Oxlr9lVTeGJAAAIOUlEQVR4nO2da3uiOhCAwXCJSYeCICoqrcX//xsXdLUIIfEWJlDeD7vPHm1PfTuTy+SCZU1MTExMTExMTExMTEwYCWOMUsouf2H/OCZQqbCy1Tz9Dr1liRd+p+4qsf6yn9KJtUiXh9wGzjkBICXln9U/bP+wTBfW37NTxkky30Q2L1XYQqC0ZUfLeVLGDvZP2xeMspUXEd7lpGaHcIi8FfsLbiorm5yDUspv6JB8M3o3jGahXzYhD0LIPsxGrIZS9wDqBBLGDYHDaqRqKCv2/Ckr/93wKC07srFBrSJ/LljqavxiZB04Y6n/cMsiUkP8dERqGF1FryTRrZpoNZZ8oknwLi1nNetkDGoY/bbfkUV1NXYx/A6KZkf+Xi0VfDv0oKHp/WPcRwB7PmQzjAUawuUMXw+3e6Jf+ZtblzrEzwYaNHSuJ40ugO0O0gwNNYbLGfI9QDN0ra15+YVvhtbOMHbowUtp5jCwJjg5as+jM2RrDclMEmltdm/MHIdjhln7nuKlAqLBiKFRj15KM8eB9E1026uXMpsOgzBDg569VNODAZihnrCf5g7kue28szBT/+6h8WZoKvLC4/BzVrIr9o4eM6ZPttlClEfO9+yKa+upQ3wZ3TexJG9/bLA/Z3W09OXgY392KTQQhAPcepnNfB0xQwKDk4l+CxoYZ97wMvvQkkw8NdYM+xLFy7HpZTbTVJDIsAV0QUUzJGfVFrPT0/6aOgJmoXAE0/Yymx30JJOZdSuWiT4tHERiRG3RO8hM7LOpMAzIRiTG1TPMM7JnYnNhFBCvRzE2d80LGSYenYgjZq5JDOyNEyMcwlQ/6lYkRtsCAi+MS6a465coErPVVvmMDQsZ1hkD7YFvOY7RV7ExrQDBOn9S8NtiNhpLWWaFjGzV0SmaXhY6l5zMGuWxrhbmZKYxKehsjt5DbpAYJizbXSE3zcxHrHfNic/NSSa6l39WZ7O7evl+dVOrCoiMCRm2UjUaxF67H2VvtPJi/UvaZIEt5AJdq3sZ4kAcg9PHygpZGhMyPXzaRzClx2Zp7ytscoghza+43oAIGFJ9SLBFtMFWcsK4TDIll4RrSbgQMxb59Y7wnyI3IWKEq9W/VOeoW9x8iexFqH35A0Nm8oVtpSrdScWQ5e6jxe6nVtr0d80XL4NjcOztsnA/q/+6cH+8IL53G4kJG4AVnbWyGN6u1/x/0YmXi1aFqzjedQbXiA47l//unhTDc0Hlr+JzfU9K5dhWxOvVL4sBHoq1nNTcsY8E0JfeFKWY58RA3EqiG9bK1Rf8ogz1NERMvBN9UQ1PZYag18RVE6WnxDR3GrVR7QzFb32Zr/jVPS7mR9K+XBFsabsRs8cWkyjGvU+IUeXRiZUimeIE14uqU3pGzH0oUhi7W2IulpiFPGTIClmMquagTcxMvjKBXXlQHnzUJ6aQr2Uhz5boEiuVZh/SXAIPWcwGTcxMOlAA5FqVsnz3gpj55pjH8T746Xhd+r8G5DNMyhWCp8WksXOaRgM4cSp8h7QQBFtkMaq9Uc+KCeotiLMUvUU6xsPeDa1LTGP+XD/Xc2UnFYO8tK9JTGtXpyOaJ0jbmHGKaU0RYS14l2yahp5KWhpfwf5o0eZP2dgXXYyW7lqwrcRx22+TXQeA3l2vdYgR1NdB0DHJ0hi7UsWWGuZKO8EsSHQeTJbGgLx7SMskUlhRiNvfRZbG2JNIVmgQIzyCIWh9pWJS5HrMXIMYYUFBMJKRiQHsAzorDY2v8Aih8/GYGOwD6pncy1NiPOFp//aaikwMdjFctXSNJsZHX4k8vn3B7R1isMd3VQlPsW8ISQxyZVPdXyOJ4ci9dXWOwEgxgH+eQLFGiyQGv1MSX+iALQa74lvB5CtLOGLwt8dUq9fyFUEUMRx55fqE/CgBjpgYW0qFvOyLIgZ/eFch3wGNIoYUBmRSx70xqGIAv7OukJ6hxRCDvUJwQZpLGGKwy5oXpLmEEjFmZJK8X0IQY0afVNFxCxOWGPzt8lckd14giDHieNuZ7mt1EMSY0vSeSLqnc72LMabprei+3aF3MbAxKGDKHrur+e1dDDcpYCQ3qPctBnsbaxOWmSIG/cxfg66d0D2LMejumP+wjnpVz2IMKII3oeLbfPsVY9ZdbxeEt5D2KsbAO0itrqp4r2KMqIG3Ed+9H7jzNvUpRN58gyscn5Ci+U3c5qTetK76AhMuShJHwE1IyF/9DYfW+5peDGx5z1DVvjO9YJ/2k3DPhXj6vBg1SWqi5ekddwF77M8ugy3wxGDvRpRD5Wdb9WHwk0/O0A2KGW7cHKlF74+2qzBnYaAbhtAAmzkVaFKO83o2A3kyBDEWy/Q8pq3TS2xacaoLtujTDMRmd9R16Ko/MxAvzG94r9BFX+1MGS8D8lLdRNSPGciH0r5cYJnfw3gG9kPzUvXaW+1jYH4YzkPAf2FM9+zAWdIBerGqGaXOp1YAmD5v7IYuFPf4vQDJhzN8acOsQFM68TUbsBerev41aAgaYpv+fGs1NDm8O2iAB8ngvZTpROf5W4c0JHdHoKWCWZ79NjXEDoc4eOmAZsF7em6AdTaScDnD6OLweitMSPA10DFdN6Wa4DU1BIJhzaTvhdFsGd/5xIUWwGNvXElUh9GkiMjjcQOEHNNkdEl0A6Vfns8fcQOE773xNS1tWOkmjOAuOaUUiMIv9ge0nKEsS9c+cElaQSVlv5kn9M9YOVMGTuKGgV+2HwRqgkohpRICfhC6f07KhVJOGTtuEW6CKI9j247jPAo2Yepmp5ewfz5cGKsk3MAGXlKYmJiYmJiYmJiYmJgYK/8AOGa4r25r604AAAAASUVORK5CYII=" alt=""></div>
-            <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/584px-Twitter-logo.svg.png" alt=""></div>
+            <div class="logo"><img src="./Images/twitter_icon.webp" alt=""></div>
+            <div class="logo"><img src="./Images/facebook_icon.png" alt=""></div>
             <div class="logo"><img src="https://seeklogo.com/images/F/facebook-icon-circle-logo-09F32F61FF-seeklogo.com.png" alt=""></div>
         </div>
       </div>
       <div id="footer746"></div>
 </body>
 </html>
-<script src="./FeaturedProfile.js" type="module"></script>
+
+<script src="./scripts/FeaturedProfile.js" type="module"></script>

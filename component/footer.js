@@ -1,106 +1,81 @@
-function footer(){
-     return ` <div>
-                    <div>
+function footer() {
+    return ` <div class="footer_main_div">
+               <div>
+                <div>
                     <h2>Job Search</h2>
-                    <a  href="login.html">Job Seekers Login</a>
-                    <br/>
-                    <br/>
-                    <a href="">Upload Resume</a>
-                    <br/>
-                    <br/>
-                    <a href="">Career Advice</a>
-                    <br/>
-                    <br/>
-                    <a href="">Search Tips</a>
-                    <br/>
-                    <br/>
-                    <a href="">Free Job Alert</a>
-                    <br/>
-                    <br/>
-                    <a href="">Find Companies</a>
-                    <br/>
-                    <br/>
-                    <a href="">Help</a>
-                    </div>
-                    <div>
+                    <p><a  href="login.html">Job Seekers Login</a></p>
+                    <p><a href="jobs.html">Upload Resume</a></p>
+                    <p><a href="career.html">Career Advice</a></p>
+                    <p><a href="PremiumServices.html">Search Tips</a></p>
+                    <p><a href="PremiumServices.html">Find Companies</a></p>
+                    <p><a href="career.html">Free Job Alert</a></p>
+                    <p><a href="PremiumServices.html">Help</a></p>
+                  
+                </div>
+                  
+                <div>
                     <h2>Employers</h2>
-                    <a href="">Employer Login</a>
-                    <br/>
-                    <br/>
-                    <a href="">Job Posting</a>
-                    <br/>
-                    <br/>
-                    <a href="">Access Resume Database</a>
-                    <br/>
-                    <br/>
-                    <a href="">Join mRecruiters</a>
-                    <br/>
-                    <br/>
-                    <a href="">Buy Online</a>
-                    </div>
-                    <div>
-                        <h2>Monster</h2>
-                        <a href="">About Us</a>
-                        <br/>
-                        <br/>
-                        <a href="">Contact Us</a>
-                        <br/>
-                        <br/>
-                        <a href="">Career with us</a>
-                        <br/>
-                        <br/>
-                        <a href="">Send Feedback</a>
-                        <br/>
-                        <br/>
-                        <a href="">Testimonials</a>
-                        <br/>
-                        <br/>
-                        <a href="">HTML Sitemap</a>
-                        <br/>
-                        <br/>
-                        <a href="">XML Sitemap</a>
-                        <br/>
-                        <br/>
-                        <a href="">Jobs App</a>
-                    </div>
-                    <div>
-                        <h2>Stay Connected</h2>
-                        <a href="">Facebook</a>
-                        <br/>
-                        <br/>
-                        <a href="">Twitter</a>
-                        <br/>
-                        <br/>
-                        <a href="">Linkedin</a>
-                        <br/>
-                        <br/>
-                        <a href="">Instagram</a>
-                        <br/>
-                        <br/>
-                        <a href="">Youtube</a>
-                        <br/>
-                        <br/>
-                        <img src="https://media.monsterindia.com/trex/public/default/images/android-footer.png">
-                        <br/>
-                        <br/>
-                        <img src="https://media.monsterindia.com/trex/public/default/images/ios-footer.png">
-                    </div>
-                    <div>
-                        <h2>Legal</h2>
-                        <a href="">Security & Fraud</a>
-                        <br/>
-                        <br/>
-                        <a href="">Privacy Policy</a>
-                        <br/>
-                        <br/>
-                        <a href="">Terms of Use</a>
-                        <br/>
-                        <br/>
-                        <a href="">Be Safe</a>
-                        <br/>
-                        <br/>
-                        <a href="">Complaints</a>
-                    </div>
-                </div>`
+                    <p><a href="javascript:void(0)">Job Posting</a></p>
+                    <p><a href="PremiumServices.html">Buy Online</a></p>
+                    <p><a href="login.html">Employer Login</a></p>
+                    <p><a href="PremiumServices.html">Join My Recruiters</a></p>
+                    <p><a href="PremiumServices.html">Access Resume Database</a></p>
+                </div>
+                    
+                <div>
+                    <h2>Monster</h2>
+                    <p><a href="PremiumServices.html">About Us</a></p>
+                    <p><a href="PremiumServices.html">Contact Us</a></p>
+                    <p><a href="career.html">Career with us</a></p>
+                    <p><a href="PremiumServices.html">Send Feedback</a></p>
+                    <p><a href="javascript:void(0)">Testimonials</a></p>
+                    <p><a href="javascript:void(0)">HTML Sitemap</a></p>
+                    <p><a href="javascript:void(0)">XML Sitemap</a></p>
+                    <p><a href="javascript:void(0)">Jobs App</a>
+                </div>
+                  
+                <div>
+                    <h2>Stay Connected</h2>
+                    <p><a href="https://www.instagram.com/monster_india/">Instagram</a></p>
+                    <p><a href="https://www.linkedin.com/company/monster-india/">Linkedin</a></p>
+                    <p><a href="https://www.facebook.com/monsterindia">Facebook</a></p>
+                    <p><a href="https://twitter.com/monster_india">Twitter</a></p>
+                    <p><a href="https://www.youtube.com/user/monsterindiavideos/MonsterTV">Youtube</a></p>
+                    <img src="https://media.monsterindia.com/trex/public/default/images/android-footer.png">
+                    <img src="https://media.monsterindia.com/trex/public/default/images/ios-footer.png">
+                </div>
+                  
+                <div>
+                    <h2>Legal</h2>
+                   <p><a href="javascript:void(0)">Security & Fraud</a></p>
+                   <p><a href="javascript:void(0)">Privacy Policy</a></p>
+                   <p><a href="javascript:void(0)">Terms of Use</a></p>
+                   <p><a href="javascript:void(0)">Be Safe</a></p>
+                   <p><a href="javascript:void(0)">Complaints</a></p>
+                </div>
+                </div>
+            </div>`
+                   
+                   
+                   
+                    
+                  
+                  
+                  
+                  
+                  
+                        
+                     
+                     
+                     
+                     
+                     
+                     
+                        
+                        
+                        
+                        
+                     
+                     
 }
 export default footer;

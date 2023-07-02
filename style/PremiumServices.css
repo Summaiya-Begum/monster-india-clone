@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -13,7 +14,7 @@
    position:fixed;
    width: 100px;
    height: 100px;
-   margin-top: 700px;
+  bottom: 0;
    
 }
 #chatbox>img{
@@ -85,9 +86,9 @@
     top: 60%;
     transform: translate(-50%,-50%) scale(1);
 
-
-
 }
+
+
 .popup>div:first-child{
     background-color: rgb(239,237,246);
 }
@@ -227,7 +228,7 @@
     background-color: rgb(96,72,157);
     
     height: 50px;
-    width: 300px;
+    width: 100%;
     font-size: 20px;
     margin-top: 30px;
     border-radius: 10px;
@@ -236,6 +237,7 @@
 .benifits>a{
     color: white;
     text-decoration: none;
+
 }
 .div>div:last-child>p:last-child{
     color: rgb(96,72,182);
@@ -429,8 +431,8 @@ select{
     font-size:20px;
 }
 #tollNo>img{
-    width: 10%;
-    height: 90%;
+   width: 35px;
+   height: 35px;
 }
 #emailSection{
     display: flex;
@@ -444,8 +446,9 @@ select{
 
 }
 #emailSection>img{
-    width: 10%;
-    height: 90%;
+    width: 40px;
+    height: 40px;
+    
 }
 #logoSection{
     display: flex;
@@ -458,13 +461,11 @@ select{
     height: 40px;
 }
 .logo>img{
-    width: 100%;
-    height: 100%;
+   height: 30px;
+   width: 30px;
 }
 /* navbar */
-.main_container{
-    margin-top: 30px;
-}
+
 /* footer */
 #footer746{
     margin-top: 30px;

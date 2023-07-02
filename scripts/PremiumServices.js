@@ -1,6 +1,6 @@
-import navbar from "./component/navbar.js";
+import navbar from "../component/navbar.js";
  document.querySelector(".main_container").innerHTML=navbar();
- import footer from "./component/footer.js";
+ import footer from "../component/footer.js";
 document.querySelector("#footer746").innerHTML=footer();
 
 let popup=document.getElementById("popup");
@@ -105,15 +105,15 @@ document.querySelector("#callMeBack").addEventListener("click",(e)=>{
 
 let popup2=document.getElementById("chatbot");
 document.querySelector("#chatbotDiv").addEventListener("click",()=>{
-    
-    
     console.log("inside");
     popup2.classList.add("open-popup")
+})
+    
+    
 
     
 
 
-})
 
 document.querySelector("#closeChatbot").addEventListener("click",()=>{
     
@@ -145,3 +145,8 @@ let talk=()=>{
         document.getElementById("chatLog").innerHTML+="&nbsp&nbsp&nbsp&nbsp&nbsp&nbspI dont understand...<br>";
     }
 }
+//check if login or not
+
+
+import Logout from "./logout.js";
+Logout()

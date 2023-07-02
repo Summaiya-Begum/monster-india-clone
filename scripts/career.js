@@ -17,7 +17,7 @@ import {footer1} from "../components/footer.js"
 document.querySelector('.small_footer').innerHTML = footer1()
 
 let x = footer1()
-console.log(x)
+// console.log(x)
 
 
 
@@ -272,7 +272,6 @@ function AddNextPage(el,i){
 
 
 
-
 // small covid data
 
 let covid2 = [
@@ -355,6 +354,8 @@ function data(){
 }
 
 data()
+
+//check if login or not
 
 
 
